@@ -43,11 +43,7 @@ def crops(request):
         
     return render(request, 'base.html',
     {'mapbox_access_token':mapbox_access_token,'temp':temp,
-        'obj':obj,
-        'humidity':humidity,
-        'wind':wind_speed,
-        'city':city,
-        'description':description})
+        'obj':obj})
 
 
 def feature1(request):
