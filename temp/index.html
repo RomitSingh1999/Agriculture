@@ -1,0 +1,1147 @@
+{% load static%}
+<!DOCTYPE html>
+
+<html>
+
+
+    <head>
+    
+        <title>Agriculture</title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="description" content="Simple, clean, responsive website built with html5, CSS3, Js, jQuery and Bootstrap">
+        
+        <meta name="keywords" content="web, design, html, css, html5, css3, javascript, jquery, bootstrap, development">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        
+         <!-- Google Fonts -->
+        <link href= "https://fonts.googleapis.com/css?family=Raleway:500italic,600italic,600,700,700italic,300italic,300,400,400italic,800,900" rel='stylesheet' type='text/css'>
+        
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600italic,700,900" rel='stylesheet' type='text/css'>
+        
+               
+    
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+        <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+        <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.js"></script>
+        <link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.0.2/mapbox-gl-directions.css"
+        type="text/css"
+        />
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="{%static 'images/favicon.png' %}">
+        
+        <!-- CSS -->
+
+        <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+        
+        <!-- Fontawesome  -->
+        <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}">
+        
+        <!-- Animate CSS -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/animate.css' %}">
+        
+        <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+        
+        <!-- BX slider CSS -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/jquery.bxslider.css' %}">
+        
+        <!-- responsive css -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/responsive.css' %}">
+        
+             
+    </head>
+    
+    
+    <body>
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"
+            type="text/css"
+        />
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+        
+        <style>
+            .places{
+                position: absolute;
+                z-index: 1;
+                width: 50%;
+                left: 50%;
+                margin:5%;
+                top: 10px;
+                }
+            .geocoder {
+            position: absolute;
+            z-index: 1;
+            width: 50%;
+            left: 50%;
+            margin-top: 10px;
+            margin-left: -25%;
+            top: 10px;
+            }
+            .mapboxgl-ctrl-geocoder {
+            min-width: 100%;
+            }
+            #map {
+            margin-top: 75px;
+            }
+            .marker{
+                background-image: url('static/images/mapbox-icon.png');
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            .marker1{
+                background-image: url('static/images/marker1.png');
+                background-size: cover;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+            </style>
+                
+
+                </div>
+                <div style="margin: 30px; margin-left:300px;">
+                    
+                    <div id="geocoder"  class="geocoder"></div>
+                    
+                    <div id='map' style = 'width: 800px; height: 600px;'></div>
+                </div>
+                <h2 class="btn btn-download wow fadeInLeft save"  style="color: #03d437;">Use my location</h2>
+                
+                
+
+            
+                    
+                
+                            
+                    
+
+            <!---------------------------------------------------------------------------------------------------------------------->
+            
+            <!-- Navigation -->
+            
+            <nav class="navbar navbar-default navbar-fixed-top">
+              
+                
+                <div class="container">
+                  
+                    
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#loso-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <a class="navbar-brand" href="#">
+                          
+                          <img src="{%static 'images/logo-small.png' %}" alt="logo">
+
+                        </a>
+                    </div>
+
+                
+                <div class="collapse navbar-collapse" id="loso-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#HOME" class="nav-item">HOME</a></li>
+                        <li><a href="#ABOUT" class="nav-item">ABOUT</a></li>
+                        <li><a href="#FEATURES" class="nav-item">FEATURES</a></li>
+                        <li><a href="#SCREENS" class="nav-item">SCREENS</a></li>
+                        <li><a href="#DOWNLOAD" class="nav-item">DOWNLOAD</a></li>
+                        <li><a href="#CONTACT" class="nav-item">CONTACT</a></li>
+                  </ul>
+                 
+                 
+                </div>
+              </div>
+</nav>
+            
+            
+        
+            <div class="header-overlay">
+            
+            
+              	<div class="container header-container">
+                
+                    <div class="row">
+                    
+                        <div class="col-md-12">
+                        
+                            <!-- Logo -->
+                            <div class="logo text-center">
+                            
+                                <img src="{%static 'images/logo.png' %}" alt="logo">
+                            
+                            </div>
+                        
+                        </div>
+                        
+                    
+                    </div>
+                    
+                    
+                    <div class="row">
+                        
+                        <div class="col-md-8">
+                        
+                            <div class="header-text">
+                                
+                                <!-- Title & Description -->
+                                <h1>We are planning a basic idea to help farmers to guide them for best future crops/grains in near future</h1>
+                                <p> Built with great love!</p>
+                            
+                            </div>
+                            <div id='map' style = 'width: 800px; height: 600px;'> </div>
+                            
+                            <div class="header-btns">
+                            
+                                <!-- Header buttons -->
+                                <a class="btn btn-download wow fadeInLeft" href="#" style="color: #03d437;">Donate Us</a>
+                                <a class="btn btn-tour wow fadeInRight" href="#" style="color: #03d437;"> Follow us
+                                
+                                    <i class="fa fa-angle-down"></i>
+                                </a>
+                                
+                            
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="col-md-3 col-md-offset-1">
+                        
+                            <div class="header-iphone">
+                            
+                                
+                            
+                            </div>
+                        
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    
+                
+                </div>
+                
+            
+            </div>
+            
+        </header>
+        
+        <section id="ABOUT">
+        
+            <div class="container">
+            
+                <div class="row">
+                
+                    <div class="col-md-10 col-md-offset-1">
+                    
+                        <!-- About us Title & Description -->
+                        <div class="section-title">
+                            
+                            <h2> कृषि उत्पादक </h2>
+                            <p>वैश्विक जलवायु परिवर्तन कोई नई घटना नहीं है। जलवायु परिवर्तन के प्रभाव से कई खतरे पैदा हुए हैं; महत्वपूर्ण परिणामों में से एक गुणवत्ता और मात्रा जल 
+                                संसाधनों और फसल उत्पादकता में बदलाव ला रहा है। यह निष्कर्ष निकाला जा सकता है कि भारतीय क्षेत्र जलवायु परिवर्तन के प्रति अत्यधिक संवेदनशील है। 
+                                कृषि क्षेत्र सबसे अधिक प्रवण क्षेत्र है क्योंकि इसका सीधा असर 1.3 बिलियन लोगों के जीवन पर पड़ेगा। भारत ने 2050 [15] तक ग्रीनहाउस गैस उत्सर्जन को
+                                 कम करने का लक्ष्य रखा है। कृषि, वन, पशुपालन, जलीय जीवन और 
+                                अन्य जीवित प्राणियों पर जलवायु परिवर्तन के प्रभाव का आकलन करने के लिए अनुसंधान को मजबूत करने के लिए समन्वित प्रयासों की तत्काल आवश्यकता है।</p>
+                        
+                        
+                        </div>
+                    
+                    
+                    
+                    </div>
+                
+                </div>
+            
+            
+            </div>
+        
+            <div class="choose-us-wraper">
+            
+                <div class="container">
+                
+                    <div class="row">
+                    
+                        <div class="col-md-6">
+                        
+                            <!-- About iphone -->
+                            <div class="about-iphone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                            
+                                <img class="img-responsive" src="{%static 'images/about-iphone.png' %}" alt="iphone">
+                            
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="col-md-6 wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
+                        
+                            <!-- Why choose us title -->
+                            <div class="choose-us-title">
+                            
+                            
+                                <h2> हमारा चयन क्यों?</h2>
+                                <p>निकट भविष्य में सर्वोत्तम भविष्य की फसलों / अनाजों के लिए मार्गदर्शन करने के लिए जलवायु परिवर्तन की अप्रत्याशित स्थिति वाले किसानों की मदद करें</p>
+                            
+                            </div>
+                            
+                            <!-- why choose us description -->
+                            <div class="choose-us-des">
+                            
+                                <!-- choose us item 1 -->
+                                <div class="choose-us-item wow fadeInUp" data-wow-duration=".5s" data-wow-delay="1s">
+                                    
+                                    <!-- choose us item icon -->
+                                    <div><i class="fa fa-bolt"></i></div>
+                                    
+                                    <!-- choose us item title & des -->
+                                    <h3>नि: शुल्क</h3>
+                                    <p>हम सभी को मुफ्त सेवाएं देने का वादा करते हैं</p>
+                                
+                                </div>
+                                
+                                
+                                <!-- choose us item 2 -->
+                                <div class="choose-us-item wow fadeInUp" data-wow-duration=".5s" data-wow-delay="1s">
+                                    
+                                    <!-- choose us item icon -->
+                                    <div><i class="fa fa-bullhorn"></i></div>
+                                    
+                                    <!-- choose us item title & des -->
+                                    <h3>अपडेट किया गया</h3>
+                                    <p>हम सभी को नए डेटा से अपडेट करते हैं और हमारी सटीकता को अपडेट करते हैं</p>
+                                
+                                </div>
+                                
+                                
+                                 <!-- choose us item 3 -->
+                                <div class="choose-us-item wow fadeInUp" data-wow-duration=".5s" data-wow-delay="1s">
+                                    
+                                    <!-- choose us item icon -->
+                                    <div><i class="fa fa-flag-o"></i></div>
+                                    
+                                    <!-- choose us item title & des -->
+                                    <h3>24x7 सेवाएँ</h3>
+                                    <p>हम दुनिया भर में 24x7 घंटे सेवाएं प्रदान करते हैं</p>
+                                
+                                </div>
+                                
+                                
+                            
+                            </div>
+                            
+                            
+                            
+                        
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+        
+        
+        </section>
+        
+        
+        <!-- Testimonials -->
+        <section class="testimonial">
+        
+            <div class="testimonial-overlay">
+            
+                <div class="container">
+                
+                    <div class="row">
+                    
+                        <div class="col-md-12 wow bounceInDown">
+                        
+                        
+                            <div id="carousel-testimonial" class="carousel slide" data-ride="carousel">
+                            
+                            
+                                <!-- indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel-testimonial" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carousel-testimonial" data-slide-to="1"></li>
+                                    <li data-target="#carousel-testimonial" data-slide-to="2"></li>
+                                </ol>
+                                
+                                
+                                <!-- wrapper for slides -->
+                                <div class="carousel-inner">
+                                
+                                
+                                    <!-- item 01 -->
+                                    <div class="item active text-center">
+                                    
+                                    
+                                        <img src="{%static 'images/client-01.jpg' %}" alt="testimonial" class="center-block">
+                                        
+                                        <div class="testimonial-caption">
+                                        
+                                            <h2>यश प्रेम कुशवाहा</h2>
+                                            <h4><span> सीनियर सॉफ्टवेयर इंजीनियर, </span>Microsoft</h4>
+                                            <p>“मेरा भारत महान है क्योंकी मेरे देश की पहचान किसान है।”</p>
+                                        
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                    
+                                    <!-- item 02 -->
+                                    <div class="item text-center">
+                                    
+                                    
+                                        <img src="{%static 'images/client-02.jpg' %}" alt="testimonial" class="center-block">
+                                        
+                                        <div class="testimonial-caption">
+                                        
+                                            <h2>रोमित रंजन सिंह</h2>
+                                            <h4><span> सीनियर सॉफ्टवेयर इंजीनियर, </span>Amazon</h4>
+                                            <p>“चीर के जमीन को, मैं उम्मीद बोता हूँ… मैं किसान हूँ, चैन से कहाँ सोता हूँ”</p>
+                                        
+                                        </div>
+                                        
+                                    
+                                    </div>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                
+                                </div>
+                                
+                                
+                            </div>
+                        
+                        
+                        
+                        </div>
+                        
+                        
+                    </div>
+                
+                
+                </div>
+            
+            
+            </div>
+        
+        
+        
+        </section>
+        
+        
+        <!-- Features -->
+        <section class="features" id="FEATURES">
+            
+            <div class="container">
+            
+                <div class="row">
+                
+                
+                    <div class="col-md-10 col-md-offset-1">
+                    
+                        <div class="section-title wow fadeIn" data-wow-duration="1s">
+                        
+                            <h2> Features </h2>
+                            
+                            <p>Climate adversly affect the agriculture in large scale, so we are here to predict the future climatic 
+                                condition as precise as we can and prevent as much damage as we can.
+                            </p>
+                        </div>
+                    
+                    </div>
+                    
+                    
+                
+                
+                </div>
+            
+            
+            </div>
+            
+            <div class="features-inner-wrapper">
+            
+                <div class="container">
+                
+                    <div class="row">
+                    
+                    
+                        <div class="col-md-4 wow fadeInLeft" data-wow-duration="1s">
+                        
+                            
+                            <!-- left feature item 01 -->
+                            <div class="left-feature-item">
+                                <!-- Icon -->
+                                <div class="left-feature-item-icon">
+                                    <i class="fa fa-desktop"></i>
+                                </div>
+                            
+                                <!-- feature item title & description -->
+                                <h3> RETINA READY </h3>
+                                <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            
+                            </div>
+                            
+                            
+                             <!-- left feature item 02 -->
+                            <div class="left-feature-item">
+                                <!-- Icon -->
+                                <div class="left-feature-item-icon">
+                                    <i class="fa fa-mobile"></i>
+                                </div>
+                            
+                                <!-- feature item title & description -->
+                                <h3> MOBILE READY </h3>
+                                <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            
+                            </div>
+                            
+                             <!-- left feature item 03 -->
+                            <div class="left-feature-item">
+                                <!-- Icon -->
+                                <div class="left-feature-item-icon">
+                                    <i class="fa fa-eye"></i>
+                                </div>
+                            
+                                <!-- feature item title & description -->
+                                <h3> EASY LAYOUT</h3>
+                                <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            
+                            </div>
+                        
+                        
+                        
+                        </div>
+                        
+                        
+                        <div class="col-md-4">
+                        
+                                <div class="feature-iphone">
+                            
+                                    <img class="wow bounceIn img-responsive" data-wow-duration="1s" src="{%static 'images/iphone-02.png' %}" alt="feature iphone">
+                            
+                                </div>
+                        
+                        
+                        </div>
+                        
+                        <div class="col-md-4 wow fadeInRight" data-wow-duration="1s">
+                        
+                            <!-- right feature item 01 -->
+                            <div class="right-feature-item">
+                            
+                                <!-- Icon -->
+                                <div class="right-feature-item-icon">
+                                    <i class="fa fa-certificate"></i>
+                                
+                                </div>
+                                
+                                <!-- feature item title and description -->
+                                <h3> CERTIFIED SOLUTION</h3>
+                                
+                                <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                                
+                            
+                            </div>
+                            
+                            
+                            
+                             <!-- right feature item 02 -->
+                            <div class="right-feature-item">
+                            
+                                <!-- Icon -->
+                                <div class="right-feature-item-icon">
+                                    <i class="fa fa-rss"></i>
+                                
+                                </div>
+                                
+                                <!-- feature item title and description -->
+                                <h3> CONSTANT FEED</h3>
+                                
+                                <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                                
+                            
+                            </div>
+                            
+                            
+                             <!-- right feature item 03 -->
+                            <div class="right-feature-item">
+                            
+                                <!-- Icon -->
+                                <div class="right-feature-item-icon">
+                                    <i class="fa fa-database"></i>
+                                
+                                </div>
+                                
+                                <!-- feature item title and description -->
+                                <h3> SECURE DATA</h3>
+                                
+                                <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                                
+                            
+                            </div>
+                        
+                        </div>
+                        
+                    
+                    
+                    </div>
+                
+                
+                </div>
+            
+            </div>
+            
+            
+            
+            
+            
+        
+        
+        </section>
+        
+        <!-- Purchase Now -->
+        <section class="purchase-now">
+        
+            <div class="container">
+            
+                <div class="row wow fadeInLeftBig" data-wow-duration="1s">
+                
+                    <div class="col-md-9">
+                    
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    
+                    </div>
+                    
+                    <div class="col-md-3">
+                    
+                        <a class="btn btn-primary btn-pruchase-now" href="#">Purchase Now</a>
+                    
+                    </div>    
+                
+                
+                </div>
+                
+            </div>
+        
+        </section>
+        
+        <!-- Screens -->
+        <section class="screens" id="SCREENS">
+        
+            <div class="container">
+            
+                <div class="row">
+                
+                    <div class="col-md-10 col-md-offset-1">
+                    
+                        <div class="section-title">
+                        
+                            <h2> Screens </h2>
+                            <p>Mauris a mauris feugiat, luctus mauris a, sollicitudin ex. Pellentesque et tortor in risus elementum aliquet. Etiam facilisis justo urna, id feugiat magna scelerisque non.
+                            </p>
+                        </div>
+                    
+                    </div>
+                
+                </div>
+            
+            
+            </div>
+            
+            <div class="screen-slider wow bounceInRight" data-wow-duration="1s">
+            
+                <div class="container">
+                    
+                    <div class="row">
+
+                        <div class="bxslider">
+                            
+                            <div class="item">
+                                <img src="{%static 'images/screen-01.png' %}" alt="screen">
+
+                            </div>
+                            
+                            <div class="item">
+                            <img src="{%static 'images/screen-02.png' %}" alt="screen">
+
+                            </div>
+                            
+                            
+                            
+                            <div class="item">
+                                <img src="{%static 'images/screen-04.png' %}" alt="screen">
+                            </div>
+
+                        </div>
+
+                        </div>
+                </div>
+            
+            
+            
+            </div>
+            
+        
+        
+        </section>
+        
+        <!-- Counters -->
+        <section class="counter">
+        
+            <div class="counter-overlay">
+            
+                <div class="container wow bounceInLeft" data-wow-duration="1s">
+                    
+                    <div class="row text-center">
+                    
+                        <div class="col-md-3">
+                        
+                            <div class="counter-item">
+                            
+                                <div><i class="fa fa-cloud-download"></i></div>
+                                <h2><span class="counter-num"> 1588 </span><span>+</span></h2>
+                                <p>Downloads</p>
+                            </div>
+                        
+                        </div>
+                        
+                        
+                        <div class="col-md-3">
+                        
+                            <div class="counter-item">
+                            
+                                <div><i class="fa fa-gift"></i></div>
+                                <h2><span class="counter-num"> 3500 </span><span>+</span></h2>
+                                <p>Awards</p>
+                            </div>
+                        
+                        </div>
+                        
+                        <div class="col-md-3">
+                        
+                            <div class="counter-item">
+                            
+                                <div><i class="fa fa-heart-o"></i></div>
+                                <h2><span class="counter-num"> 199 </span><span>+</span></h2>
+                                <p>Likes</p>
+                            </div>
+                        
+                        </div>
+                        
+                        
+                        <div class="col-md-3">
+                        
+                            <div class="counter-item">
+                            
+                                <div><i class="fa fa-check"></i></div>
+                                <h2><span class="counter-num"> 1066 </span><span>+</span></h2>
+                                <p>Recomended</p>
+                            </div>
+                        
+                        </div>
+                    
+                        
+                    
+                    </div>
+                    
+                
+                
+                </div>
+            
+            </div>
+            
+        
+        </section>
+        
+        <!-- Download Now -->
+        <section class="download-now" id="DOWNLOAD">
+        
+            <div class="container">
+                
+                <div class="row">
+                
+                    <div class="col-md-10 col-md-offset-1">
+                    
+                        <div class="section-title">
+                        
+                        
+                            <h2> Download Now </h2>
+                            <p>Vestibulum congue eros ac neque dignissim, vel imperdiet neque consectetur. Maecenas condimentum cursus maximus. Praesent eu diam efficitur</p>
+                            
+                        </div>
+                    
+                    
+                    </div>
+                    
+                
+                </div>
+            
+            </div>
+            
+            <div class="container">
+            
+                <div class="row">
+                
+                    <div class="col-md-8 col-md-offset-2 wow fadeInUp" data-wow-duration="1s">
+                    
+                            <img class="img-responsive" src="{%static 'images/download-screen.png' %}" alt="download screen">
+                    </div>
+                    
+                    
+                </div>
+            
+                
+            </div>
+            
+        
+        
+        </section>
+        
+        <!-- Available On -->
+        <section class="available-on">
+        
+            <div class="container wow bounceInRight" data-wow-duration="1s">
+            
+                <div class="row">
+                
+                    <div class="col-md-6">
+                    
+                        <div class="available-title">
+                            <h2>Available On </h2>
+                        
+                            <p>Vestibulum congue eros ac neque dignissim, vel imperdiet neque consectetur. Maecenas condimentum cursus maximus. Praesent eu diam efficitur</p>    
+                        
+                        </div>
+                    
+                    </div>
+                    <div class="col-md-6">
+                    
+                        <div class="row">
+                        
+                            <a href="#">
+                            
+                                <div class="col-md-4 no-padding">
+                                    <div class="available-on-item">
+                                    
+                                        <i class="fa fa-apple"></i>
+                                        <div class="available-on-inner">
+                                        
+                                            <h2> iOS</h2>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                
+                                </div> 
+                                
+                            
+                            </a>
+                            
+                            
+                            
+                             <a href="#">
+                            
+                                <div class="col-md-4 no-padding">
+                                    <div class="available-on-item">
+                                    
+                                        <i class="fa fa-android"></i>
+                                        <div class="available-on-inner">
+                                        
+                                            <h2> ANDROID</h2>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                
+                                </div> 
+                                
+                            
+                            </a>
+                            
+                             <a href="#">
+                            
+                                <div class="col-md-4 no-padding">
+                                    <div class="available-on-item">
+                                    
+                                        <i class="fa fa-windows"></i>
+                                        <div class="available-on-inner">
+                                        
+                                            <h2> WINDOWS</h2>
+                                        
+                                        </div>
+                                    
+                                    </div>
+                                
+                                </div> 
+                                
+                            
+                            </a>
+                        
+                        
+                        
+                        </div>
+                        
+                    
+                    </div>
+                    
+                
+                
+                </div>
+            </div>
+        
+        </section>
+        
+        <!-- Contact Us -->
+        <section class="contact-us" id="CONTACT">
+        
+            <div class="container wow bounceIn">
+            
+                    <div class="row">
+
+                        <div class="col-md-10 col-md-offset-1">
+                        
+                            <div class="section-title">
+                            
+                                <h2>Contact Us</h2>
+                                <p>Nulla blandit sem sed neque pretium mattis. Etiam consectetur eleifend felis porttitor porttitor. Phasellus sit amet augue fringilla, fringilla lectus at, tincidunt ante.</p>
+                            </div>
+                            
+                        </div>
+
+
+                    </div>
+            
+            
+            </div>
+            
+            <div class="contact-us-form wow bounceIn">
+            
+            
+                <div class="container">
+                
+                    <form role="form">
+                    
+                        <div class="row">
+                        
+                            <div class="col-md-4">
+                            
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                            
+                            </div>
+                            
+                            <div class="col-md-8">
+                            
+                                <textarea class="form-control" id="message" rows="25" cols="10" placeholder="Message Text...."></textarea>
+                                
+                                <button type="button" class="btn btn-default submit-btn form_submit">SEND</button>
+                            
+                            </div>
+                        
+                        </div>
+                    
+                    
+                    </form>
+                
+                
+                </div>
+            
+            
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                
+                    <div class="col-md-12 wow bounceInLeft">
+                    
+                        <div class="social-icons">
+                        
+                            <ul>
+                            
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            
+                            </ul>
+                        
+                        
+                        </div>
+                    
+                    
+                    </div>
+                
+                </div>
+            
+            </div>
+            
+            
+            
+        
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+        
+            <div class="container">
+            
+                <div class="row">
+                
+                    <div class="col-md-6">
+                    
+                        <div id="copyright">
+                            <p>Copyright &copy; 2016 <a href="#"> - LoSo</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                    
+                            <div class="scroll-top">
+                                <a href="#HOME" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+                            </div>
+                    </div>
+                
+                
+                </div>
+            
+            </div>
+        
+        
+        </footer>
+        
+        
+        <!-- Bootstrap JavaScript -->
+        <script src="{%static 'js/jquery.js' %}"></script>
+        <script src="{%static 'js/bootstrap.min.js' %}"></script>
+        
+        <!-- Bx Slider JS -->
+        <script src="{%static 'js/jquery.bxslider.min.js' %}"></script>
+        
+        <!-- Add JS counter lib -->
+        <script src="{%static 'js/jquery.waypoints.min.js' %}"></script>
+        <script src="{%static 'js/jquery.counterup.min.js' %}"></script>
+        
+        <!-- Add wow js lib -->
+        <script src="{%static 'js/wow.min.js' %}"></script>
+      
+        <!-- Custom Js -->
+        <script src="{%static 'js/custom.js' %}"></script>
+
+        <script>
+                
+            mapboxgl.accessToken = '{{mapbox_access_token}}';
+            var map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v10',
+                zoom: 20,
+                center: [80.983299,26.883301],
+                pitchWithRotate:true,
+                clickTolerance:8,
+                draggable:false
+                
+            });
+            
+            
+            var geocoder = new MapboxGeocoder({
+                accessToken: mapboxgl.accessToken,
+                mapboxgl: mapboxgl
+                });
+                
+                 
+               /* document.getElementById('geocoder').appendChild(geocoder.onAdd(map));*/
+            var logistic_lat;
+            var logistic_lon;
+            var coordinates;
+/*Add geolocation of the Runner */
+            var geolocate = new mapboxgl.GeolocateControl({showAccuracyCircle:false,
+                positionOptions: {
+                enableHighAccuracy: true,
+                zoom:2
+                },
+                trackUserLocation:true
+                });
+                // Add the control to the map.
+                map.addControl(geolocate);
+                // Set an event listener that fires
+                // when a geolocate event occurs.
+                
+                geolocate.on('geolocate', function(e) {
+                   
+                    logistic_lat = e.coords.latitude;
+                    logistic_lon = e.coords.longitude;
+                    
+                    
+                    coordinates = [logistic_lon, logistic_lat];
+                    console.log(logistic_lat,logistic_lon)
+                    var Runnermarker = new mapboxgl.Marker({
+                        draggable:false,
+                        color:'green'
+                    })
+                        
+                        .setLngLat(coordinates)
+                        .setPopup(new mapboxgl.Popup().setHTML("<h1>Hello World!</h1>"))
+                        
+                        .addTo(map);
+                         
+                        
+                        var coor = Runnermarker.getPopup()
+                        
+
+                    });
+                    $(document).ready(function(){
+                        //ajax
+                        $('.save').click(function(){
+                            $.ajaxSetup({
+                                headers : {
+                                    "X-CSRFToken":'{{ csrf_token }}'
+                                }
+                            });
+                            console.log(logistic_lat,"latitude")
+                            $.ajax({
+                                type: "POST",
+                                url: "ajax",
+                                dataType: "json",
+                                data: {'latitude':logistic_lat,'longitude':logistic_lon},
+                            });
+                        })
+
+                    })
+            
+            console.log('Test',logistic_lat)
+
+            
+            
+            map.on('load', function() {
+                geolocate.trigger();
+                });
+               
+             
+                        
+                        
+                
+        </script>
+        
+    </body>
+
+
+</html>

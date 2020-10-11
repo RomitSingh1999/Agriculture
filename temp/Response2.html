@@ -1,0 +1,593 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+    <head>
+    
+        <title>Loso - Simple, Clean And Responsive Website </title>
+        
+        <meta charset="utf-8">
+        
+        <meta name="description" content="Simple, clean, responsive website built with html5, CSS3, Js, jQuery and Bootstrap">
+        
+        <meta name="keywords" content="web, design, html, css, html5, css3, javascript, jquery, bootstrap, development">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+       
+        
+         <!-- Google Fonts -->
+        <link href='https://fonts.googleapis.com/css?family=Raleway:500italic,600italic,600,700,700italic,300italic,300,400,400italic,800,900' rel='stylesheet' type='text/css'>
+        
+        <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,600italic,700,900' rel='stylesheet' type='text/css'>
+        
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="{%static 'images/favicon.png' %}">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.min.css' %}">
+        
+        <!-- Fontawesome  -->
+        <link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}">
+        
+        <!-- Animate CSS -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/animate.css' %}">
+        
+        <link rel="stylesheet" type="text/css" href="{%static 'css/style.css' %}">
+        
+        <!-- BX slider CSS -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/jquery.bxslider.css' % }">
+        
+        <!-- responsive css -->
+        <link rel="stylesheet" type="text/css" href="{%static 'css/responsive.css' %}">
+        
+             
+    </head>
+<body>
+            <!-- Header -->
+            <header class="header" id="HOME">
+            
+                <!-- Navigation -->
+                
+                <nav class="navbar navbar-default navbar-fixed-top">
+                  
+                    
+                    <div class="container">
+                      
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#loso-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#">
+                              <!-- small size logo -->
+                              <img src="{%static 'images/logo-small.png' %}" alt="logo">
+    
+                            </a>
+                        </div>
+    
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="loso-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right">
+                            <li><a href="ajax" class="nav-item">HOME</a></li>
+                            <li><a href="#ABOUT" class="nav-item">ABOUT</a></li>
+                            <li><a href="feature1" class="nav-item">FEATURES</a></li>
+                            <li><a href="feature2" class="nav-item">OTHER FEATURES</a></li>
+                            <li><a href="#DOWNLOAD" class="nav-item">DOWNLOAD</a></li>
+                            <li><a href="#CONTACT" class="nav-item">CONTACT</a></li>
+                      </ul>
+                     
+                     
+                    </div><!-- /.navbar-collapse -->
+                  </div><!-- /.container-fluid -->
+    </nav>
+    
+
+          
+
+      <div class="header-overlay">
+            
+            
+        <div class="container header-container">
+        
+            <div class="row">
+            
+                <div class="col-md-12">
+                
+                    <!-- Logo -->
+                    <div class="logo text-center">
+                    
+                        <img src="{%static 'images/rice-1.jpg' %}" style="margin-top: 100px;" alt="logo">
+                        <div style="color: #fff; padding-top: 80px;"  >अन्य</div>
+                    
+                    </div>
+                
+                </div>
+                
+            
+            </div>
+            
+            
+            <div class="row">
+                
+                <div class="col-md-10">
+                
+                    <div class="header-text">
+                    
+                        <!-- Title & Description -->
+                        <h1>खेती में अनाज के अलावा अन्य खाद्य फसलें भी महत्वपूर्ण हैं| भारत में उत्पादित मुख्य तेल-बीज मूंगफली,
+                             सरसों, नारियल, सीसम (तिल), सोयाबीन, अरंडी के बीज, कपास के बीज, अलसी और सूरजमुखी हैं। इनमें से अधिकांश खाद्य हैं
+                              और खाना पकाने के माध्यम के रूप में उपयोग किए जाते हैं।</h1>
+                        <!-- <p> बड़े प्यार से बनाया!</p> -->
+                    
+                    </div>
+                    
+                    <div class="header-btns">
+                    
+                        <!-- Header buttons -->
+                        <a class="btn btn-download wow fadeInLeft" href="" style="color: #03d437;">Home</a>
+                        <!-- <a class="btn btn-tour wow fadeInRight" href="index.html" style="color: #03d437;"> हमें सामाजिक नेटवर्क पर कनेक्ट करें -->
+                        
+                            <!-- <i class="fa fa-angle-down"></i> -->
+                        </a>
+                        
+                    
+                    </div>
+                    
+                </div>
+                
+                <div class="col-md-3 col-md-offset-1">
+                
+                    <div class="header-iphone">
+                    
+                    
+                        <!-- Header iPhone -->
+                        <img src="{%static 'images/iphone-header.png' %}" alt = "header iphone">
+                    
+                    </div>
+                
+                    
+                </div>
+                
+                
+            </div>
+            
+        
+        </div>
+
+        
+    
+
+      </div>
+
+            </header>
+
+      <section>
+        <section id="ABOUT">
+        
+          <div class="container">
+          
+              <div class="row">
+              
+                  <div class="col-md-10 col-md-offset-1">
+                  
+                      <!-- About us Title & Description -->
+                      <div class="section-title">
+                      
+                          <h2> गन्ना </h2>
+                          <p>यह एक उष्णकटिबंधीय और साथ ही एक है
+                            उपोष्ण कटिबंधीय फसल। यह गर्म और अच्छी तरह से बढ़ता है
+                            21 ° C के तापमान के साथ आर्द्र जलवायु
+                            27 डिग्री सेल्सियस और 75 सेमी के बीच एक वार्षिक वर्षा।
+                            और 100 सें.मी. क्षेत्रों में सिंचाई की आवश्यकता होती है
+                            कम बारिश का। इसे विभिन्न प्रकार की मिट्टी पर उगाया जा सकता है और बुवाई से मैनुअल श्रम की आवश्यकता होती है
+                            कटाई। भारत दूसरा सबसे बड़ा उत्पादक है
+                            ब्राजील के बाद ही गन्ने की। यह मुख्य है
+                            चीनी का स्रोत, गुड़ (गुड़), खांडसारी और
+                            गुड़। गन्ना उत्पादक राज्य उत्तर प्रदेश, महाराष्ट्र हैं,
+                            कर्नाटक, तमिलनाडु, आंध्र प्रदेश,
+                            तेलंगाना, बिहार, पंजाब और हरियाणा।</p>
+                      
+                      
+                      </div>
+                  
+                  
+                  
+                  </div>
+              
+              </div>
+              <div class="row">
+              
+                <div class="col-md-10 col-md-offset-1">
+                
+                    <!-- About us Title & Description -->
+                    <div class="section-title">
+                    
+                        <h2> मूंगफली </h2>
+                        <p>2008 में भारत दूसरा था
+                            दुनिया में मूंगफली का सबसे बड़ा उत्पादक
+                            चीन के बाद। बलात्कार के बीज उत्पादन में भारत था
+                            के बाद दुनिया में तीसरा सबसे बड़ा उत्पादक
+                            2008 में कनाडा और चीन। विभिन्न तेल बीज
+                            लगभग 12 प्रतिशत को कवर किया जाता है
+                            देश के कुल फसली क्षेत्र में। मुख्य
+                            भारत में उत्पादित तेल-बीज मूंगफली हैं,
+                            सरसों, नारियल, तिल (तिल), सोयाबीन,
+                            अरंडी के बीज, कपास के बीज, अलसी और
+                            सूरजमुखी। इनमें से अधिकांश खाद्य और प्रयुक्त हैं
+                            खाना पकाने के माध्यमों के रूप में। हालाँकि, इनमें से कुछ
+                            उत्पादन में कच्चे माल के रूप में भी उपयोग किया जाता है
+                            साबुन, सौंदर्य प्रसाधन और मलहम की।
+                            मूंगफली एक खरीफ की फसल और खाते हैं
+                            में उत्पादित प्रमुख तिलहनों में से लगभग आधे के लिए
+                            देश। गुजरात सबसे बड़ा उत्पादक था
+                            मूंगफली के बाद आंध्र प्रदेश और
+                            2011-12 में तमिलनाडु। अलसी और सरसों
+                            रबी की फसलें हैं। सीसमम उत्तर में खरीफ की फसल है
+                            और दक्षिण भारत में रबी की फसल। अरंडी का बीज है
+                            रबी और खरीफ दोनों फसलों के रूप में उगाया जाता है।</p>
+                    
+                    
+                    </div>
+                
+                
+                
+                </div>
+            
+            </div>
+
+
+
+
+            <div class="row">
+              
+              <div class="col-md-10 col-md-offset-1">
+              
+                  <!-- About us Title & Description -->
+                  <div class="section-title">
+                  
+                      <h2> टमाटर </h2>
+                      <p>टमाटर (Tomato) भारत में पुरे वर्ष उगाई जाने वाली महत्वपूर्ण फसल है| अपने पोषक गुणों और विविध उपयोगो के कारण टमाटर 
+                          (Tomato) सबसे महत्वपूर्ण सब्जी वाली फसल है|
+                           इसमें भरपूर मात्रा में कैल्सियम, फास्फोरस और विटामिन सी पाए जाते है| यह एसिडिटी की सिकायत को दूर करता है| इसका स्वाद खटा
+                            होता है|
+
+                        टमाटर की बाजार में सम्भावनाओं को देखते हुए किसान भाई समझ सकते है, की टमाटर की खेती का भविष्य कितना उज्वल है|
+                         यदि कृषक बन्धु इसकी खेती वैज्ञानिक तकनीकी से करें, तो अच्छा उत्पादन प्राप्त कर सकते है|</p>
+                         <p>टमाटर की खेती वर्ष भर की जा सकती है, परन्तु यह फसल अत्यधिक नमी और पाला सहन नहीं कर सकती है| इसके लिए तापमान 18 डिग्री से 27
+                              डिग्री सेंटीग्रेट के बीच उपयुक्त है|
+                              फल लगने के लिए रात का आदर्श तापमान 15 डिग्री से 20 डिग्री सेंटीग्रेट के बीच रहना चाहिए| ज्यादा गर्मी में फलों के रंग व स्वाद पर प्रतिकूल प्रभाव पड़ता है|
+                              पोषक तत्व युक्त दोमट भूमि इसकी खेती के लिए उपयुक्त है| इसके लिए अच्छी जल निकास व्यवस्था होना आवश्यक है|</p>
+                  
+                  
+                  </div>
+              
+              
+              
+              </div>
+          
+          </div>
+
+
+          <div class="row">
+              
+            <div class="col-md-10 col-md-offset-1">
+            
+                <!-- About us Title & Description -->
+                <div class="section-title">
+                
+                    <h2> कपास </h2>
+                    <p>भारत को मूल माना जाता है
+                        कपास के पौधे का घर। कपास में से एक है
+                        सूती वस्त्र उद्योग के लिए मुख्य कच्चा माल।
+                        2008 में भारत का दूसरा सबसे बड़ा उत्पादक था
+                        चीन के बाद कपास। सुखाने की मशीन में कपास अच्छी तरह से बढ़ता है
+                        दक्कन के पठार की काली कपास की मिट्टी के कुछ हिस्से। इसके लिए उच्च तापमान, प्रकाश की आवश्यकता होती है
+                        वर्षा या सिंचाई, 210 ठंढ से मुक्त दिन और
+                        इसकी वृद्धि के लिए चमकदार धूप। यह एक खरीफ है
+                        फसल और परिपक्व होने के लिए 6 से 8 महीने की आवश्यकता होती है।
+                        प्रमुख कपास उत्पादक राज्य हैं-
+                        महाराष्ट्र, गुजरात, मध्य प्रदेश,
+                        कर्नाटक, आंध्र प्रदेश, तेलंगाना, तमिल
+                        नाडु, पंजाब, हरियाणा और उत्तर प्रदेश।</p>
+                
+                
+                </div>
+            
+            
+            
+            </div>
+        
+        </div>
+
+
+
+        <div class="row">
+              
+          <div class="col-md-10 col-md-offset-1">
+          
+              <!-- About us Title & Description -->
+              <div class="section-title">
+              
+                  <h2> प्याज </h2>
+                  <p>प्‍याज की खेती भारत के सभी भागों मे सफलता पूर्वक की जाती है। प्याज एक नकदी फसल है जिसमें विटामिन सी, फास्फोरस आदि पौष्टिक तत्व प्रचुर मात्रा में पाये जाते हैं।
+                       इसका प्याज का उपयोग सलाद, सब्जी, अचार एवं मसाले के रूप में किया जाता है। गर्मी में लू लग जाने तथा गुर्दे की बीमारी में भी प्याज लाभदायक रहता है।</p>
+              
+              
+              </div>
+          
+          
+          
+          </div>
+      
+      </div>
+      <div class="row">
+              
+        <div class="col-md-10 col-md-offset-1">
+        
+            <!-- About us Title & Description -->
+            <div class="section-title">
+            
+                <h2> दालों </h2>
+                <p>भारत सबसे बड़ा उत्पादक भी है
+                  दुनिया में दालों के उपभोक्ता के रूप में। इन
+                  एक शाकाहारी में प्रोटीन का प्रमुख स्रोत हैं
+                  आहार। भारत में उगाई जाने वाली प्रमुख दालें हैं
+                  अरहर (अरहर), उड़द, मूंग, मसूर, मटर और चना। क्या आप इनमें से भेद कर सकते हैं
+                  दालों को खरीफ के मौसम में उगाया जाता है
+                  जो रबी मौसम में उगाए जाते हैं? दलहन
+                  कम नमी की जरूरत है और सूखे में भी जीवित रहें
+                  शर्तेँ। फलदार फसलें होने के कारण ये सभी
+                  अरहर को छोड़कर फसलें मिट्टी की उर्वरता को बहाल करने में मदद करती हैं
+                  हवा से नाइट्रोजन को ठीक करके। इसलिए, इन
+                  ज्यादातर अन्य फसलों के साथ रोटेशन में उगाए जाते हैं।
+                  भारत में प्रमुख दलहन उत्पादक राज्य हैं
+                  मध्य प्रदेश, उत्तर प्रदेश, राजस्थान,
+                  महाराष्ट्र और कर्नाटक।</p>
+            
+            
+            </div>
+        
+        
+        
+        </div>
+    
+    </div>
+          
+          
+          </div>
+
+      </section>
+<!-- </header> -->
+<!-- Available On -->
+<section class="available-on">
+        
+    <div class="container wow bounceInRight" data-wow-duration="1s">
+    
+        <div class="row">
+        
+            <div class="col-md-6">
+            
+                <div class="available-title">
+                    <h2>उपकरणों पर उपलब्ध है|</h2>
+                
+                    <p>IOS, Android, विंडोज उपकरणों पर उपलब्ध मुफ्त डाउनलोड के लिए अब</p>    
+                
+                </div>
+            
+            </div>
+            <div class="col-md-6">
+            
+                <div class="row">
+                
+                    <a href="https://play.google.com/store/search?q=farming%20app&hl=en">
+                    
+                        <div class="col-md-4 no-padding">
+                            <div class="available-on-item">
+                            
+                                <i class="fa fa-apple"></i>
+                                <div class="available-on-inner">
+                                
+                                    <h2> iOS</h2>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        </div> 
+                        
+                    
+                    </a>
+                    
+                    
+                    
+                     <a href="https://play.google.com/store/search?q=farming%20app&hl=en">
+                    
+                        <div class="col-md-4 no-padding">
+                            <div class="available-on-item">
+                            
+                                <i class="fa fa-android"></i>
+                                <div class="available-on-inner">
+                                
+                                    <h2> एंड्रॉयड</h2>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        </div> 
+                        
+                    
+                    </a>
+                    
+                     <a href="https://play.google.com/store/search?q=farming%20app&hl=en">
+                    
+                        <div class="col-md-4 no-padding">
+                            <div class="available-on-item">
+                            
+                                <i class="fa fa-windows"></i>
+                                <div class="available-on-inner">
+                                
+                                    <h2> विंडोज</h2>
+                                
+                                </div>
+                            
+                            </div>
+                        
+                        </div> 
+                        
+                    
+                    </a>
+                
+                
+                
+                </div>
+                
+            
+            </div>
+            
+        
+        
+        </div>
+    </div>
+
+</section>
+<!-- Contact Us -->
+<section class="contact-us" id="CONTACT">
+        
+    <div class="container wow bounceIn">
+    
+            <div class="row">
+
+                <div class="col-md-10 col-md-offset-1">
+                
+                    <div class="section-title">
+                    
+                        <h2>संपर्क करें</h2>
+                        <p>नीचे दिए गए फॉर्म को भरकर किसी भी समय हमसे संपर्क करने में संकोच न करें।</p>
+                    </div>
+                    
+                </div>
+
+
+            </div>
+    
+    
+    </div>
+    
+    <div class="contact-us-form wow bounceIn">
+    
+    
+        <div class="container">
+        
+            <form role="form">
+            
+                <div class="row">
+                
+                    <div class="col-md-4">
+                    
+                        <input type="text" class="form-control" id="name" placeholder="नाम">
+                        <input type="email" class="form-control" id="email" placeholder="ईमेल">
+                        <input type="text" class="form-control" id="subject" placeholder="विषय">
+                    
+                    </div>
+                    
+                    <div class="col-md-8">
+                    
+                        <textarea class="form-control" id="message" rows="25" cols="10" placeholder="संदेश...."></textarea>
+                        
+                        <button type="button" class="btn btn-default submit-btn form_submit">भेजें</button>
+                    
+                    </div>
+                
+                </div>
+            
+            
+            </form>
+        
+        
+        </div>
+    
+    
+    </div>
+    
+    <div class="container">
+        <div class="row">
+        
+            <div class="col-md-12 wow bounceInLeft">
+            
+                <div class="social-icons">
+                
+                    <ul>
+                    
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                    
+                    </ul>
+                
+                
+                </div>
+            
+            
+            </div>
+        
+        </div>
+    
+    </div>
+    
+    
+    
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+
+    <div class="container">
+    
+        <div class="row">
+        
+            <div class="col-md-6">
+            
+                <div id="copyright">
+                    <p>Copyright &copy; 2020 <a href="#"> - Ak@t$uki</a></p>
+                </div>
+            </div>
+            <div class="col-md-6">
+            
+                    <div class="scroll-top">
+                        <a href="" id="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+                    </div>
+            </div>
+        
+        
+        </div>
+    
+    </div>
+
+
+</footer>
+
+
+<!-- Bootstrap JavaScript -->
+<script src="{%static 'js/jquery.js' %}"></script>
+<script src="{%static 'js/bootstrap.min.js' %}"></script>
+
+<!-- Bx Slider JS -->
+<script src="{%static 'js/jquery.bxslider.min.js' %}"></script>
+
+<!-- Add JS counter lib -->
+<script src="{%static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{%static 'js/jquery.counterup.min.js' %}"></script>
+
+<!-- Add wow js lib -->
+<script src="{%static 'js/wow.min.js' %}"></script>
+
+<!-- Custom Js -->
+<script src="{%static 'js/custom.js' %}"></script>
+
+</body>
+</body>
+</html>
