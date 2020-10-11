@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'agriculture',
         'USER':'postgres',
         'PASSWORD':'qwerty',
-        'HOST': '5432'
+        'PORT': '5432'
     }
 }
 
